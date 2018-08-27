@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { Form, FieldHeader } from "components/common/form"
 import { TextInput } from "components/common/form/inputs"
 
@@ -7,6 +8,12 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column'
+  },
+  linkContainer: {
+    marginTop: 10
+  },
+  link: {
+    margin: 5
   }
 }
 
@@ -43,6 +50,10 @@ export class SignIn extends React.Component{
           <FieldHeader>Password</FieldHeader>
           <TextInput type='password' name='password' value={this.state.password} onChange={this.handleChange} />
         </Form>
+        <div style={styles.linkContainer}>
+          <Link style={styles.link} to='/'>Back Home</Link>
+          <Link style={styles.link} to='/signup/'>Sign up</Link>
+        </div>
       </div>
     );
   }
