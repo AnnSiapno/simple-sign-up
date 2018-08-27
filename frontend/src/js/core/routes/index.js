@@ -2,6 +2,7 @@ import { Switch, Route, IndexRoute, Link } from 'react-router-dom'
 import React from "react";
 
 import { Home as HomePage } from 'components/home'
+import { SignUp as SignUpPage } from 'components/signup'
 
 class App extends React.Component{
   render(){
@@ -9,17 +10,6 @@ class App extends React.Component{
     return(
       <div>{this.props.children}</div>
     )
-  }
-}
-
-class SignUp extends React.Component{
-  render(){
-    console.log('rendering sign up')
-    return(
-      <div>
-        <h1>SIGNUP PAGE</h1>
-      </div>
-    );
   }
 }
 
@@ -48,7 +38,7 @@ class Profile extends React.Component{
 export const routes = (
   <Switch>
     <Route exact path="/" component={HomePage}/>
-    <Route name="sign-up" path="/signup/*" component={SignUp}/>
+    <Route name="sign-up" path="/signup/*" component={SignUpPage}/>
     <Route name="sign-in" path="/signin/*" component={SignIn}/>
     <Route name="profile" path="/profile/:userId" component={Profile}/>
   </Switch>

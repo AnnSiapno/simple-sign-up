@@ -27,6 +27,7 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
+    "formik": "^1.1.1",
     "react-router-dom": "^4.3.1"
   }
 }
