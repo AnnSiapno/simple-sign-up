@@ -1,16 +1,14 @@
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, IndexRoute, Link } from 'react-router-dom'
 import React from "react";
+
+import { Home as HomePage } from 'components/home'
 
 class App extends React.Component{
   render(){
     console.log('rendering app')
     return(
-      <div>
-        <h1>Simple Sign up App</h1>
-        <Link to='/signup/'>Sign up</Link>
-        <Link to='/signin/'>Sign in</Link>
-      </div>
-    );
+      <div>{this.props.children}</div>
+    )
   }
 }
 
@@ -49,7 +47,7 @@ class Profile extends React.Component{
 
 export const routes = (
   <Switch>
-    <Route name="home" path="/home" component={App}/>
+    <Route path="/" component={HomePage}/>
     <Route name="sign-up" path="/signup/*" component={SignUp}/>
     <Route name="sign-in" path="/signin/*" component={SignIn}/>
     <Route name="profile" path="/profile/:userId" component={Profile}/>

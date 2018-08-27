@@ -18,7 +18,19 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+
+  resolve: {
+    symlinks: false,
+    modules: [
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './src/js'),
+      'node_modules'
+    ],
+    alias: {
+      'react-native': 'react-native-web'
+    },
+    extensions: ['.web.js', '.web.jsx', '.js', '.jsx']
+  },
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
