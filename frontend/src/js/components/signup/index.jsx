@@ -37,7 +37,7 @@ export class SignUp extends React.Component{
     return(
       <div style={styles.container}>
         <h1>Sign Up</h1>
-        <Form handleSubmit={this.signUpUser} submitText='Sign Up'>
+        <Form onSubmit={this.signUpUser} submitText='Sign Up'>
           <FieldHeader>Email</FieldHeader>
           <TextInput type='email' name='email' value={this.state.email} onChange={this.handleChange} />
           <FieldHeader>Password</FieldHeader>

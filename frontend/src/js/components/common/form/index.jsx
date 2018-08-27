@@ -14,9 +14,15 @@ const styles = {
 }
 
 export class Form extends React.Component {
+
+  handleSubmit = event => {
+    event.preventDefault()
+    this.props.onSubmit && this.props.onSubmit()
+  }
+
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit} style={styles.form}>
+      <form onSubmit={this.handleSubmit} style={styles.form}>
         {this.props.children}
         <input type="submit" value={this.props.submitText}/>
       </form>
