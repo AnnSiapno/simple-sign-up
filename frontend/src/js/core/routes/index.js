@@ -47,7 +47,7 @@ class Profile extends React.Component{
 
 export const routes = (
   <Switch>
-    <Route path="/" component={HomePage}/>
+    <Route exact path="/" component={HomePage}/>
     <Route name="sign-up" path="/signup/*" component={SignUp}/>
     <Route name="sign-in" path="/signin/*" component={SignIn}/>
     <Route name="profile" path="/profile/:userId" component={Profile}/>
