@@ -8,9 +8,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['env'] }
+        query: {
+          presets: ['react', 'es2015'],
+          plugins: ['transform-class-properties']
+        }
       },
       {
         test: /\.css$/,
